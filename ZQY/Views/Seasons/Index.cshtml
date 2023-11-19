@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ZQY.Models.Season>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- music -->
+<audio id="myAudio" autoplay loop>
+    <source src="~/Content/images/music/hua.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+var audio = document.getElementById("myAudio");
+
+document.addEventListener("click", function () {
+    if (audio.paused) {
+        audio.play();
+    }
+});
+</script>
+<style>
+    h2 {
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: lightyellow;
+    }
+
+    .action-links a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: #333;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+    }
+
+        .action-links a:hover {
+            background-color: #e8e8e8;
+        }
+
+    .action-links a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: #fff; /* 文本颜色设置为白色 */
+        padding: 6px 10px;
+        border: 1px solid #63B8FF; /* 初始边框颜色设置为浅蓝色 */
+        border-radius: 4px;
+        background-color: #63B8FF; /* 初始背景颜色设置为浅蓝色 */
+        transition: background-color 0.3s; /* 添加过渡效果 */
+    }
+
+        .action-links a:hover {
+            background-color: #87CEFF; /* 鼠标悬停时的浅蓝色 */
+        }
+
+        .action-links a:active {
+            background-color: #87CEFF; /* 点击时的深蓝色 */
+            border-color: #87CEFF; /* 点击时的边框颜色 */
+        }
+</style>
+
+
+
+<p class="action-links">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="action-links">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>

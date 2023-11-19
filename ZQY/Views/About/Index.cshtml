@@ -1,0 +1,95 @@
+<head>
+
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/total.css">
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+    </style>
+</head>
+
+<div class="main">
+
+    <div class="main">
+
+        <!-- music -->
+        <audio id="myAudio" autoplay loop>
+
+            <source src="~/Content/images/music/wubie.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+        <body>
+
+
+
+            <script>
+                var audio = document.getElementById("myAudio");
+
+                document.addEventListener("click", function () {
+                    if (audio.paused) {
+                        audio.play();
+                    }
+                });
+            </script>
+
+            <style>
+                /* 隐藏默认音频控制条 */
+                #myAudio {
+                    display: none;
+                }
+            </style>
+
+    </div>
+
+
+    <style>
+        #changeColorButton {
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #3498db;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* 添加渐变效果 */
+        }
+
+            #changeColorButton:hover {
+                background-color: #2980b9;
+            }
+    </style>
+
+    <button id="changeColorButton">Change Color</button>
+
+
+
+
+    <div class="nr" style="background-color:antiquewhite">
+        <div class="tit">Content</div>
+        <div class="geyan">
+            <style>
+                p {
+                    font-family: 'Blackadder ITC', cursive;
+                    font-size: 16px; /* 设置字体大小，可以根据需要调整 */
+                    line-height: 1.5; /* 设置行高，可以根据需要调整 */
+                }
+            </style>
+
+            <P>
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp"TIanGuanCiFu "tells the story of Xie Lian, the Crown Prince of Xianle Kingdom, who cherishes the world, and the desperate Ghost King Flower City. Eight hundred years ago, Xie Lian was the Crown Prince, whose beauty was infinitely precious. During the Shangyuan Festival of Heaven, he saved a child in red and became one of the four famous scenes of "Prince Yue Shen" at a glance. Later, he eliminated ghosts at the Yinian Bridge and was praised by the emperor for his "limitless" words. This was Xie Lian's first ascent. The Crown Prince rose to immortality and celebrated throughout the country, with countless believers and people worshipping him. He opened caves and erected statues, and there were countless temples and views. Unexpectedly, the Great Rebellion in the Xianle Kingdom ensued. Xie Lian had compassion for all sentient beings and decided to bring about a rebellion in the mortal world. As it was a human war, the divine officials had no power to obstruct it. Therefore, Xie Lian's actions were equivalent to going down to earth without permission and being punished. In addition, human disasters were not something that a small divine official could save. Xie Lian not only failed to prevent this riot but also caused himself to be ruined and questioned by believers for his incompetence. From then on, the statue of the deity was destroyed, temples and temples were burned down, What made Xie Lian even more unacceptable was being exiled, banned from power, and brought down to the world.
+            </P>
+
+
+
+        </div>
+        <!------网站主体结束--------------------------->
+        <!------网站底部分开始----------------------->
+        <script>
+            document.getElementById('changeColorButton').addEventListener('click', function () {
+                const colors = ['#3498db', '#e74c3c', '#27ae60', '#f39c12', '#9b59b6'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.body.style.backgroundColor = randomColor;
+            });
+        </script>
+        </body>

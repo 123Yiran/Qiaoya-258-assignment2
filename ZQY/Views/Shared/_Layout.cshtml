@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/total.css">
+</head>
+<style>
+    /* 导航栏样式 */
+    .navbar {
+        background-color: #f8f8f8; /* 导航栏背景色 */
+        border: 1px solid #ddd; /* 导航栏边框 */
+        overflow: hidden; /* 清除浮动 */
+    }
+
+    .navbar-nav {
+        float: left;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+    }
+
+        .navbar-nav li {
+            float: left;
+            margin-right: 15px;
+        }
+
+            .navbar-nav li a {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: #FFB90F;
+            }
+
+    /* 搜索表单样式 */
+    .navbar-form {
+        float: right;
+        margin: 10px 15px;
+        list-style: none;
+    }
+
+    .input-group {
+        display: flex;
+    }
+
+        .input-group input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .input-group button {
+            padding: 8px 12px;
+            background-color:indianred;
+            color: #fff;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+</style>
+
+<body>
+    <div class="top"></div>
+    <div class="nav">
+        <ul class="nav_menu">
+            <li class="nav_menu-item">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav_menu-item">@Html.ActionLink("About", "Index", "About", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav_menu-item">@Html.ActionLink("Everies", "Index", "Everies", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav_menu-item">@Html.ActionLink("Seasons", "Index", "Seasons", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav_menu-item">@Html.ActionLink("Photo", "Index", "Photo", new { area = "" }, new { @class = "nav-link" })</li>
+            <li class="nav_menu-item">@Html.ActionLink("Role", "Index", "Role", new { area = "" }, new { @class = "nav-link" })</li>
+
+        </ul>
+    </div>
+
+
+
+    <!-- pictures -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner1.jpg" alt="Image 1" width="100%" height="100%">
+         
+        </div>
+
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner2.jpg" alt="Image 2" width="100%" height="100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner3.jpg" alt="Image 3" width="100%" height="100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner4.jpg" alt="Image 4" width="100%" height="100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner7.jpg" alt="Image 5" width="100%" height="100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="~/Content/images/banner8.jpg" alt="Image 6" width="100%" height="100%">
+        </div>
+    </div>
+    <!--轮播-->
+    <script src="~/Content/js/slidePicture.js"></script>
+    <script>
+let slideIndex = 0;
+
+    function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+    slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
+        </script>
+
+
+    <!--主体-->
+    <div class="container body-content" style="background-color:antiquewhite!important">
+        @RenderBody()
+
+        <div class="foot">
+            <div class="banq">
+                All rights reserved: &nbsp;&nbsp;TianGuanCiFu</br>
+                <a href="mailto:Amy@qq.com" style="color: white;">Connect Me:&nbsp;&nbsp;</a>Amy@qq.com
+
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+
+
+
+
+
+
+</html>

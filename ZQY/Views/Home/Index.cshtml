@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/total.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <!-- music -->
+        <audio id="myAudio" autoplay loop>
+            <source src="~/Content/images/music/yueshen.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+            var audio = document.getElementById("myAudio");
+
+            document.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        </script>
+
+        <style>
+            /* 隐藏默认音频控制条 */
+            #myAudio {
+                display: none;
+            }
+        </style>
+
+    </div>
+
+
+
+
+
+
+    <div class="nr">
+        <!--滚动条-->
+        <style>
+            .gundong {
+                color: orange; /* 设置字体颜色为橙色 */
+                font-family: Algerian, sans-serif; /* 设置字体为 Algerian，如果用户没有该字体，会回退到 sans-serif 字体 */
+            }
+        </style>
+
+        <marquee scrolldelay="950" scrollamount="100" class="gundong">Welcome   to   the   &nbsp;&nbsp; &nbsp;&nbsp;'TianGuanCiFu'&nbsp;&nbsp;&nbsp;&nbsp;     Website!</marquee>
+
+
+
+
+        <div class="tit-s">Introduction<span><a target="_blank" href="about.html">@Html.ActionLink("more", "Index", "About", new { area = "" }, new { @class = "nav-link" })> ></a></span></div>
+        <div class="box1">
+            <div class="box1-left">
+
+                <img src="~/Content/images/TOTAL.jpg" style="width: 120px;"height: 100px;" />
+                
+            </div>
+            <div class="box1-right">
+                <P>
+                    &nbsp;&nbsp;&nbsp; “God Gives Blessings "is a domestically produced online animation produced by Dream Painting Animation, directed by Li Haoling, and mainly voiced by Ma Zhengyang, Deng Youxi, Huang Ying, and others. The first season was aired every Saturday on Bilibili starting from October 31, 2020.  The second season of will start broadcasting on Bilibili (Hong Kong, Macao, and Taiwan) from October 18, 2023.
+                </P>
+                <P>
+                    &nbsp;&nbsp;&nbsp;This animation is adapted from the novel of the same name, with a strong ink aroma and a strong copper smell. It tells the story of Prince Xie Lian of the Kingdom of Xianle, who, during his mortal experience, meets two small divine officials and the Ghost King Flower City. Together, the four of them solve each mysterious event and gradually come into contact with the gloomy past of the seemingly shining divine officials in the immortal world.
+                </P>
+                <p>&nbsp;&nbsp;&nbsp;On September 28, 2021, won the Overseas Influence Award at the 18th China Animation Golden Dragon Awards. </p>
+            </div>
+
+        </div>
+        <div class="tit-s">Photos<span><a target="_blank" href="Photo.html">@Html.ActionLink("more", "Index", "Photo", new { area = "" }, new { @class = "nav-link" })> ></a></span></div>
+        <div class="caiz">
+            <ul>
+                <li>
+                    <a target="_self" href="xiangce.html">
+
+                        <div>
+                            <img src="~/Content/images/T1.jpg" />
+
+                        </div>
+                        <p>Picture①</p>
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="xiangce.html">
+                        <div>
+                            <img src="~/Content/images/T2.jpg" />
+                        </div>
+                        <p>Picture②</p>
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="xiangce.html">
+                        <div>
+                            <img src="~/Content/images/T3.jpg" />
+                        </div>
+                        <p>Picture③</p>
+                    </a>
+                </li>
+                <li>
+                    <a target="_self" href="xiangce.html">
+                        <div>
+                            <img src="~/Content/images/T4.jpg" />
+                        </div>
+                        <p>Picture④</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tit-s">Role<span><a target="_self" href="~/Views/Role/Index.cshtml">@Html.ActionLink("more", "Index", "Role", new { area = "" }, new { @class = "nav-link" })> ></a></span></div>
+
+        
+
+        <div class="news-box">
+            <ul>
+                <li class="mar30">
+                    <a target="_self" href="#.html">
+
+
+                        <div >
+                            <img src="~/Content/images/neir01.jpg" style="width:20%" />
+
+                        </div>
+                        <h1>Xi Lian</h1>
+                        <p>仙乐太子，花冠武神，瘟神，芳心国师，花谢花将军，破烂神</p>
+                        <p>2026-08-05&nbsp;&nbsp;&nbsp;admin&nbsp;&nbsp;&nbsp;<span>548</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="#.html">
+
+
+                        <div>
+                            <img src="~/Content/images/huacheng.jpg" style="width:20%;" />
+
+                        </div>
+                        <h1>Hua Cheng</h1>
+                        <p>绝境鬼王，鬼市之主</p>
+                        <p>2026-10-05&nbsp;&nbsp;&nbsp;admin&nbsp;&nbsp;&nbsp;<span>642</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+</body>
